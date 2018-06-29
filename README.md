@@ -1,3 +1,20 @@
+# Precise.ly fork information
+
+Precise.ly maintains a fork of [serverless-plugin-scripts](https://github.com/mvila/serverless-plugin-scripts) because the upstream version does not inject `serverless.yml` environment variables into the environment of the scripts. The maintainer [is not interested in changing this behavior](https://github.com/mvila/serverless-plugin-scripts/pull/6), but our infrastructure setup relies on it.
+
+To make a release:
+- run `yarn compile`
+- run `yarn pack`, make sure the generated tarball looks reasonable
+- go to the [GitHub release panel](https://github.com/precisely/serverless-plugin-scripts/releases), make a new release, and be sure to upload the tarball with a reasonable name
+- make a note of the URL of the tarball in the release
+- update dependent packages as needed
+
+---
+
+Original README follows:
+
+---
+
 # serverless-plugin-scripts [![npm version](https://img.shields.io/npm/v/serverless-plugin-scripts.svg)](https://www.npmjs.com/package/serverless-plugin-scripts)
 
 Add scripting capabilities to the [Serverless Framework](https://serverless.com/framework/).
