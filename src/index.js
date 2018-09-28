@@ -59,7 +59,10 @@ class Scripts {
           this.serverless.service &&
           this.serverless.service.provider &&
           this.serverless.service.provider.environment || {};
-    const envVars = Object.assign({}, process.env, providerEnvVars);
+    const envVars = Object.assign(
+      {AWS_PROFILE: this.serverless.service.provider.profile}, 
+      process.env, 
+      providerEnvVars);
     execSync(command, { stdio: 'inherit', env: envVars });
   }
 }
